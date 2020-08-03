@@ -68,3 +68,11 @@ input:focus {
 
     background-color: rgba(10, 46, 94, 0.795);
 }
+
+.btn:hover{
+    background-color: rgba(10, 46, 94, 0.5);
+}
+
+.btn:active{
+    background-color: orange;
+}
