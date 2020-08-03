@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
     <link rel="stylesheet" href="calculator.css">
     <title>Cuaculator</title>
 </head>
+
 <body>
     <header>
         <br>
         <h2>EEIT18 - 網頁設計</h2>
         <h1>Assignment 2 &nbsp; 網頁計算機 </h1>
-        <h5 style="color: black;"> ver 1.0</h5> 
+        <h5 style="color: black;"> ver 1.0</h5>
         <br>
     </header>
     <br>
@@ -32,30 +34,31 @@
 
     <script>
         // 將 buttons 放入鍵盤中
-        let cal_buttons = [7,8,9,'&divide;',4,5,6,'&times;',1,2,3,'-',0,'00','.','+','(',')','⌫',' = ', 'C']
+        let cal_buttons = [7, 8, 9, '&divide;', 4, 5, 6, '&times;', 1, 2, 3, '-', 0, '00', '.', '+', '(', ')', '⌫', ' = ', 'C']
         let h = window.screen.availHeight;
         console.log(h);
-        for(i of cal_buttons){ 
-            if( i == 'C'){
-                document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="keyboard.sent( this )" style="height:${h/5}; background-color: red;">${i}</div>`;
-            }  else{
-                document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="keyboard.sent( this )" style="height:${h/5};">${i}</div>`;
-            }     
+        for (i of cal_buttons) {
+            if (i == 'C') {
+                document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="keyboard.sent( this )" style="background-color: red;">${i}</div>`;
+            } else {
+                document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="keyboard.sent( this )" >${i}</div>`;
+            }
         }
 
         // 試圖做出一些隨視窗大小調整寬度的效果
-        window.onresize = function(){
+        window.onresize = function () {
             let h = window.screen.availHeight;
-            document.getElementById("cal_keyboard").innerHTML='';
-            for(i of cal_buttons){ 
-            if( i == 'C'){
-                document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="sent( this )" style="height:${h/5}; background-color: red;">${i}</div>`;
-            }  else{
-                document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="sent( this )" style="height:${h/5};">${i}</div>`;
-            }     
-        }
+            document.getElementById("cal_keyboard").innerHTML = '';
+            for (i of cal_buttons) {
+                if (i == 'C') {
+                    document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="keyboard.sent( this )" style="background-color: red;">${i}</div>`;
+                } else {
+                    document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="keyboard.sent( this )" >${i}</div>`;
+                }
+            }
         }
     </script>
     <script src="calculator.js"></script>
 </body>
+
 </html>
