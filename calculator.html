@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="calculator.ico">
-    <link rel="stylesheet" href="calculator.css">
-    <title>Cuaculator</title>
+    <link rel="icon" href="img/calculator.ico">
+    <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="css/switch.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <title>Calculator</title>
 </head>
 
 <body>
@@ -14,12 +16,31 @@
         <br>
         <h2>EEIT18 - 網頁設計</h2>
         <h1>Assignment 2 &nbsp; 網頁計算機 </h1>
-        <h5 style="color: black;"> ver 1.0</h5>
+        <h5 style="color: black;"> ver 1.2</h5>
         <br>
     </header>
     <br>
     <br>
+        <!-- 成功與失敗的動畫 -->
+        <script src="js/animate.js"></script>
+        <div id="dis_cat" onclick="pic_close('dis_cat')" style="display: none;"></div>
+        <div id="ok_cat" onclick="pic_close('ok_cat')" style="display: none; cursor: pointer;"></div>   
+
     <div id="app">
+        <div>
+            <div style="display: inline-block; height: 30px; margin: 0;line-height: 30px; position:absolute;"><h3>Useless Animations</h3></div>
+            <div style="display: inline-block; position: relative; left: 190px">
+                <div class="switch" >
+                    <input class="switch-checkbox" id="ani_switch" type="checkbox" name="switch-checkbox">
+                    <label class="switch-label" for="ani_switch">
+                        <span class="switch-txt" turnOn="開" turnOff="關"></span>
+                        <span class="switch-Round-btn"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <br>
         <div id="calculator">
             <div id="cal_display">
                 <input type="text" id="last_record" readonly placeholder="I'm a calculator :)">
@@ -30,25 +51,11 @@
             </div>
         </div>
 
-    </div>
-
-    <script>
-        // 將 buttons 放入鍵盤中
-        let cal_buttons = [7, 8, 9, '&divide;', 4, 5, 6, '&times;', 1, 2, 3, '-', 0, '00', '.', '+', '(', ')', '⌫', ' = ', 'C']
-        let h = window.screen.availHeight;
-        console.log(h);
-        for (i of cal_buttons) {
-            if (i == 'C') {
-                document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="keyboard.sent( this )" style="background-color: red;">${i}</div>`;
-            } else {
-                document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="keyboard.sent( this )" >${i}</div>`;
-            }
-        }
-
-        // 試圖做出一些隨視窗大小調整寬度的效果
-        window.onresize = function () {
+        <script>
+            // 將 buttons 放入鍵盤中
+            let cal_buttons = [7, 8, 9, '&divide;', 4, 5, 6, '&times;', 1, 2, 3, '-', 0, '00', '.', '+', '(', ')', '⌫', ' = ', 'C']
             let h = window.screen.availHeight;
-            document.getElementById("cal_keyboard").innerHTML = '';
+            console.log(h);
             for (i of cal_buttons) {
                 if (i == 'C') {
                     document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="keyboard.sent( this )" style="background-color: red;">${i}</div>`;
@@ -56,9 +63,25 @@
                     document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="keyboard.sent( this )" >${i}</div>`;
                 }
             }
-        }
-    </script>
-    <script src="calculator.js"></script>
+
+            // 試圖做出一些隨視窗大小調整寬度的效果
+            window.onresize = function () {
+                let h = window.screen.availHeight;
+                document.getElementById("cal_keyboard").innerHTML = '';
+                for (i of cal_buttons) {
+                    if (i == 'C') {
+                        document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="keyboard.sent( this )" style="background-color: red;">${i}</div>`;
+                    } else {
+                        document.getElementById("cal_keyboard").innerHTML += `<div class='btn' onclick="keyboard.sent( this )" >${i}</div>`;
+                    }
+                }
+            }
+        </script>
+        <script src="js/calculator.js"></script>
+    </div>
+
+
+    
 </body>
 
 </html>

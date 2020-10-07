@@ -1,0 +1,106 @@
+#dis_cat {
+    width:288px;
+    height:288px; 
+    position:absolute;
+    background-image:url("../img/dis_cat_material.png");
+    animation-name: dis_cat;
+    animation-duration:1s;
+    animation-iteration-count:infinite;
+    animation-timing-function:step-start;
+  }
+
+@keyframes dis_cat{
+    0%{
+        background-position:-0px -0px;
+    }
+    8.33%{
+        background-position:-288px -0px;
+    }
+    16.66%{
+        background-position:-576px -0px;
+    }
+    24.99%{
+        background-position:-864px -0px;
+    }
+    33.32%{
+        background-position:-0px -288px;
+    }
+    41.65%{
+        background-position:-288px -288px;
+    }
+    49.98%{
+      background-position:-576px -288px;
+    }
+    58.31%{
+      background-position:-864px -576px;
+    }
+    66.64%{
+      background-position:-0px -576px;
+    }
+    74.97%{
+      background-position:-288px -576px;
+    }
+    83.3%{
+      background-position:-576px -576px;
+    }
+    91.63%{
+      background-position:-864px -576px;
+    }
+    100%{
+      background-position:-0px -0px;
+    }
+}
+
+#ok_cat{
+    width:288px;
+    height:288px; 
+    position:absolute;
+    background-image:url("../img/ok_cat.png");
+    animation-name: ok_cat;
+    animation-duration:1s;
+    animation-iteration-count:infinite;
+    animation-timing-function:step-start;
+}
+
+@keyframes ok_cat{
+
+    0%{
+        background-position:-0px -0px;
+    }
+    8.33%{
+        background-position:-288px -0px;
+    }
+    16.66%{
+        background-position:-576px -0px;
+    }
+    24.99%{
+        background-position:-864px -0px;
+    }
+    33.32%{
+        background-position:-0px -288px;
+    }
+    41.65%{
+        background-position:-288px -288px;
+    }
+    49.98%{
+      background-position:-576px -288px;
+    }
+    58.31%{
+      background-position:-864px -576px;
+    }
+    66.64%{
+      background-position:-0px -576px;
+    }
+    74.97%{
+      background-position:-288px -576px;
+    }
+    83.3%{
+      background-position:-576px -576px;
+    }
+    91.63%{
+      background-position:-864px -576px;
+    }
+    100%{
+      background-position:-0px -0px;
+    }
+}
